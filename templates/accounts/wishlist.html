@@ -1,0 +1,91 @@
+{% extends './base.html' %}
+{% load ButtonVariant %}
+{% load static %}
+
+{% block inner-content %}
+    <section class="py-20 grid items-center  gap-5 max-w-screen-xl mx-auto p-4">
+        <div class="grid gap-5">
+
+            <h3 class="my-3 text-3xl font-bold text-center col-span-full">My wishlist</h3>
+
+                <table class="w-full text-sm text-left rtl:text-right text-gray-500 overflow-hidden">
+                    <thead class="text-xs text-gray-700 uppercase bg-gray-50">
+                        <tr>
+                            <th scope="col" class="px-6 py-4 text-xl">
+                                Product
+                            </th>
+                            <th scope="col" class="px-6 py-4 text-xl">
+                                Price
+                            </th>
+                            <th scope="col" class="px-6 py-4 text-xl">
+                                STOCK STATUS
+                            </th>
+
+                            <th scope="col" class="px-6 py-4 text-xl">
+                                
+                            </th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr class="bg-white border-b hover:bg-gray-50 text-xl">
+                            <th scope="row" class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap">
+                                <div class="flex items-center gap-2 p-4">
+                                    <img class="w-[100px] h-full" src="{% static 'src/images/products/product-1.png' %}" alt="">
+                                    <div class="grow text-md">
+                                        <h3 class="font-semibold text-xl">Fresh Orange</h3>
+                                       
+                                    </div>
+                                </div>
+                            </th>
+                            <td class="px-6 py-4">
+                                $14.00
+                            </td>
+        
+                            <td class="px-6 py-4">
+                                <span class="bg-primary-soft text-xl text-primary-hard capitalize rounded-lg font-bold px-3 py-2">In stock</span>
+                            </td>
+                            
+                            <td class="flex items-center px-6 py-4">
+                                <a href="" class="py-3 px-8 rounded-full text-white bg-primary inline-block hover:bg-primary-hard mt-5">Add to cart</a>
+                            </td>
+                        </tr>
+
+                        <tr class="bg-white border-b hover:bg-gray-50 text-xl">
+                            <th scope="row" class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap">
+                                <div class="flex items-center gap-2 p-4">
+                                    <img class="w-[100px] h-full" src="{% static 'src/images/products/product-1.png' %}" alt="">
+                                    <div class="grow text-md">
+                                        <h3 class="font-semibold text-xl">Fresh Orange</h3>
+                                       
+                                    </div>
+                                </div>
+                            </th>
+                            <td class="px-6 py-4">
+                                $14.00
+                            </td>
+        
+                            <td class="px-6 py-4">
+                                {% if False %} <span class="bg-primary-soft text-xl text-primary-hard capitalize rounded-lg font-bold px-3 py-2">In stock</span> {% else %} <span class="bg-red-200 text-xl text-red-800 capitalize rounded-lg font-bold px-3 py-2">Out of stock</span> {% endif %}
+                            </td>
+                            
+                            <td class="flex min-h-full gap-5 justify-between items-center px-6 py-4">
+                                <button class="py-3 px-8 rounded-full min-h-full text-white bg-primary block hover:bg-primary-hard">Add to cart</button>
+
+                                <button class="justify-self-end rounded-full h-full p-3 border border-gray-500">
+                                    <svg class="w-3 h-3" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none"
+                                        viewBox="0 0 14 14">
+                                        <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
+                                            stroke-width="2" d="m1 1 6 6m0 0 6 6M7 7l6-6M7 7l-6 6" />
+                                    </svg>
+                                    <span class="sr-only">Close modal</span>
+                                </button>
+                            </td>
+                        </tr>
+        
+                    </tbody>
+                </table>
+
+        </div>
+    </section>
+
+{% endblock %}

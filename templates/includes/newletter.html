@@ -1,0 +1,22 @@
+{% load static %}
+{% load ButtonVariant %}
+
+<div id="" class="flex justify-between w-full p-4 max-w-screen-xl mx-auto">
+    <img src="{% static 'src/images/Logo.png'  %}" alt="">
+
+    <div class="flex items-center flex-shrink-0 w-full mx-auto sm:w-auto">
+        <form class="flex flex-col items-center w-full md:flex-row">
+            <div class="flex flex-col gap-1">
+                <label for="email"
+                    class="flex-shrink-0 mb-2 me-auto text-md font-medium text-gray-800 md:mb-0 md:me-4 md:m-0">Sign up
+                    for our newsletter</label>
+                <span class="text-sm text-gray-400">Lorem ipsum dolor sit amet.</span>
+            </div>
+            <input type="email" id="email" placeholder="Enter your email"
+                class="bg-white border border-gray-300 text-gray-900 md:w-64 mb-2 md:mb-0 md:me-4 text-sm focus:ring-primary block w-full p-2.5"
+                required />
+
+            {% Button text='Subscribe' is_rounded=False size='large' %}
+        </form>
+    </div>
+</div>

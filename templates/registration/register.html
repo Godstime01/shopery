@@ -1,0 +1,22 @@
+{% extends 'accounts/base.html' %}
+
+{% block inner-content %}
+   <section class="py-20">
+    <form class="max-w-md rounded-lg shadow p-8 mx-auto" action="" method="post">
+        <h3 class="text-center text-gray-800 font-semibold text-2xl">Create account</h3>
+        {% csrf_token %}
+        {% for field in form %}
+        <div class="my-3">
+            <label for="" class="sr-only">{{field.label}}</label>
+            {{field}}
+            {% if field.errors %} <span>{{field.errors}}</span> {% endif %}
+        </div>
+        {% endfor %}
+        <button class="w-full rounded-full mt-3 bg-primary text-white hover:bg-primary-hard p-4"
+        type="submit">Create Account</button>
+        <p class="text-gray-600 mt-3 text-light text-center">Already have an account? <a class="hover:underline"
+            href="{% url 'login' %}" class="capitalize text-gray-800 font-bold">login</a></p>
+    </section>
+    </form>
+
+{% endblock %}
